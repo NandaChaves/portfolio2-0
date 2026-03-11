@@ -178,6 +178,7 @@ export const projectsData = [
 ];
 export default function MyProjects() {
   const { t, i18n } = useTranslation();
+  const currentLang = (i18n.language || 'pt').split('-')[0];  
   const carouselRef = useRef(null);
   const cardsRef = useRef([]);
   const rotationRef = useRef(null);
@@ -297,7 +298,7 @@ export default function MyProjects() {
               <div className="card-inner">
                 <img src={project.image} alt={project.title} />
                 <h3>{project.title}</h3>
-                <p>{project.description[i18n.language]}</p>
+                <p>{project.description[currentLang]}</p>
               </div>
             </div>
           ))}

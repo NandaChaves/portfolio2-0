@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #root {
-height: 100%
+height: 100%;
 width: 100%;
     --card-w: clamp(100px, 45vw, 240px);
     --card-h: calc(var(--card-w) * 1.3);

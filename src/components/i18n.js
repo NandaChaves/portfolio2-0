@@ -27,7 +27,9 @@ i18n
       },
     },
     fallbackLng: 'pt', // Idioma de fallback (base)
-    debug: false,
+    supportedLngs: ['pt', 'en', 'es', 'fr'], // Lista explícita
+    nonExplicitSupportedLngs: true, 
+    debug: true, 
 
     interpolation: {
       escapeValue: false,

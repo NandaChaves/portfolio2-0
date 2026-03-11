@@ -162,7 +162,7 @@ const languages = [
 
 const SkillsSection = () => {
   const { t, i18n } = useTranslation();
-
+  const currentLang = (i18n.language || 'pt').split('-')[0];
   return (
     <Section>
       <motion.div whileInView={"visible"}>
@@ -189,7 +189,7 @@ const SkillsSection = () => {
                     },
                   }} >
               <img loading="lazy" src={lng.link} alt={lng.title} className="w-10 h-auto rounded shadow-md border-3 border-indigo-600"/>
-              {lng.title[i18n.language]} { `${lng.level}%` }
+              {lng.title[currentLang]} { `${lng.level}%` }
                 </motion.h3>
                 <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
                   <motion.div

@@ -22,10 +22,12 @@ width: 100%;
   flex-direction: column;
 }
 
-body {
-  margin: 0;
+html,body {
+ margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  width: 100%;
+  /* Importante: min-height no body garante que o fundo cubra tudo */
+  min-height: 100vh;
   overflow-x: hidden;
 }
 

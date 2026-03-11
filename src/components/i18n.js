@@ -36,7 +36,7 @@ i18n
     },
     // Opções para a detecção de idioma
     detection: {
-      order: ['queryString', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage','navigator', 'htmlTag'],
       caches: ['localStorage'],
     },
   });

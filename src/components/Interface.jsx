@@ -14,7 +14,7 @@ const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`mt-5 h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center box-border`}
+    <motion.section className={`h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center box-border`}
       initial={{
         opacity: 0,
         y: 50,
@@ -167,15 +167,15 @@ const SkillsSection = () => {
     <Section>
       <motion.div whileInView={"visible"}>
         <h2 className="text-4xl font-bold text-white md:5xl"> {t("menu_skills")}</h2>
-        <div className=" mt-8 space-y-4">
+        <div className=" mt-3">
          <Tech />
         </div>
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold mt-10 text-white">{t("idiomas")}</h2>
-          <div className=" mt-8 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold mt-5 text-white">{t("idiomas")}</h2>
+          <div className=" mt-2 space-y-4">
             {languages.map((lng, index) => (
-              <div className="w-64" key={index}>
-                <motion.h3 className="text-xl font-bold text-gray-100 flex flex-row gap-4 md:flex-col"
+              <div className="w-64 py-2" key={index}>
+                <motion.h3 className="text-xl font-bold text-gray-100 flex flex-row gap-4"
                   initial={{
                     opacity: 0,
                   }}
@@ -238,7 +238,6 @@ const ContactSection = () => {
 
     setErrors(tempErrors);
     
-    // Se o objeto tempErrors estiver vazio, o formulário é válido
     return Object.keys(tempErrors).length === 0;
   };
 

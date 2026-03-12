@@ -8,7 +8,6 @@ import { useTranslation, Trans } from "react-i18next";
 import { Section } from "./Section";
 import "react-vertical-timeline-component/style.min.css";
 
-// Experience Card
 const ExperienceCard = ({ experience }) => {
   const { i18n } = useTranslation();
   const currentPoints = experience.points[i18n.language] || experience.points['pt'];
@@ -42,20 +41,17 @@ const ExperienceCard = ({ experience }) => {
   )
 };
 
-// Experience
 export const ExperienceTimeline = () => {
   const { t } = useTranslation();
   return (
     <Section idName="experencientimeline">
       <SectionWrapper idName="work">
       <>
-        {/* Title */}
         <div variants={textVariant()} className="flex flex-col mb-4">
           <p className={styles.sectionSubText}>{t("subtitle_work")}</p>
           <h2 className={styles.sectionHeadText}>{t("title_work")}</h2>
         </div>
 
-        {/* Experience Card */}
         <div className="w-full mt-4 overflow-visible">
           <VerticalTimeline layout="1-column">
             {EXPERIENCES.map((experience, i) => (

@@ -50,7 +50,7 @@ export const Experience = (props) => {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
   });
-  //Posição e tamanho do avatar em cada secção
+
   return (
     <>
       <Background />
@@ -111,7 +111,6 @@ export const Experience = (props) => {
       >
       <Avatar animation={characterAnimation} />
       </motion.group>
-      {/*Configurations Office, first Section */}
       <ambientLight intensity={1.9} />
       <motion.group
         position={[1.5, 2, 3]}
@@ -130,7 +129,6 @@ export const Experience = (props) => {
         ></group>
       </motion.group>
 
-      {/* Posição das formas geometricas na section 1= SKILLS. Elas só aparecem na section 0(Office) e 1(Skills) */}
       <motion.group
         position={[0, -1.5, -10]}
         animate={{
@@ -139,7 +137,7 @@ export const Experience = (props) => {
         }}
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
-        {/*Animated forms */}
+
         <Float>
           <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
             <sphereGeometry />
@@ -177,7 +175,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
       </motion.group>
-      {/**/}
+
     </>
   );
 };

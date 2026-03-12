@@ -8,7 +8,6 @@ const Loader = () => {
   return (
     <Html>
       <span className="canvas-load">
-        {/* Show percentage */}
         <p
           style={{
             fontSize: 14,

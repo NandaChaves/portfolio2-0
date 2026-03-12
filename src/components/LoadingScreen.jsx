@@ -7,7 +7,6 @@ export const LoadingScreen = ({ started, onStarted }) => {
   const [smoothedProgress, setSmoothedProgress] = useState(0);
 
   useEffect(() => {
-    // Garante que o progresso só aumente, nunca diminua visualmente
     setSmoothedProgress((prev) => Math.max(prev, progress));
   }, [progress]);
 
@@ -18,12 +17,11 @@ return (
         <div className="progress__container">
           <div 
             className="progress__bar" 
-            style={{ width: `${smoothedProgress}%` }} // Usa o valor suavizado
+            style={{ width: `${smoothedProgress}%` }}
           ></div>
         </div>
         <div className="progress__number">{smoothedProgress.toFixed(0)}%</div>
         
-        {/* Usamos o smoothedProgress para liberar o botão */}
         {smoothedProgress >= 100 && (
           <button className="loading-screen__button" onClick={onStarted}>
             Portfólio

@@ -25,7 +25,7 @@ function App() {
           ...framerMotionConfig,
         }}
       >
-        <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>~
+        <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>
           <Suspense fallback={null}>
           <color attach="background" args={["red"]}/>
           <ScrollControls pages={6} damping={0.2}>
@@ -35,7 +35,7 @@ function App() {
             </Scroll>
             <Scroll html>
               <Interface setSection={setSection} />
-                  <StarsCanvas />
+              <StarsCanvas />
             </Scroll>
           </ScrollControls>
           </Suspense>

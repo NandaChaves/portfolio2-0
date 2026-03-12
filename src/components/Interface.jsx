@@ -11,10 +11,10 @@ import MyProjects from './MyProjects';
 import { About } from './about';
 import 'react-toastify/dist/ReactToastify.css';
 const Section = (props) => {
-  const { children, isContact = false } = props;
+  const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
+    <motion.section className={`h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center box-border`}
       initial={{
         opacity: 0,
         y: 50,

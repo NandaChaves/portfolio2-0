@@ -275,7 +275,7 @@ const handleSubmit = (e) => {
   return (
     <Section isContact={true}>
       <h2 className="text-3xl md:text-5xl font-bold text-gray-200">{t("contact_me_title")}</h2>
-      <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
+      <div className="mt-4 p-8 rounded-md bg-white w-96 max-w-full">
         <form ref={formRef} onSubmit={handleSubmit} method='POST'>
           <label htmlFor="name" className="font-medium text-gray-900 block mb-1"> {t("form_name_label")}  </label>
           <input type="text" id="name" value={name} name="from_name" onChange={(e) => setName(e.target.value)} placeholder="What's your name"
@@ -295,7 +295,7 @@ const handleSubmit = (e) => {
           {errors.message && <span className="text-red-500 text-sm mt-1 italic">{t("error_message")}</span>}
           <textarea name="from_message" id="message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Write your message"
             className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"/>
-          <button disabled={loading} className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16 submit"  type="submit">
+          <button disabled={loading} className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-12 submit"  type="submit">
             {loading ? t("send") : t("form_submit_button")}
           </button>
         </form>

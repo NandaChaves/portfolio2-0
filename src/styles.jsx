@@ -1,6 +1,6 @@
 export const styles = {
   paddingX: "sm:px-10 px-6",
-  paddingY: "sm:py-10 py-6",
+  paddingY: "mt-12 sm:py-10 py-6",
   padding: "sm:px-10 sm:px-6 sm:py-10",
 
   heroHeadText:

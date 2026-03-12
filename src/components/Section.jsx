@@ -5,7 +5,7 @@ export const Section = (props) => {
 
   return (
     <motion.section 
-      className={`h-screen w-full p-6 md:p-8 
+      className={`mt-5 h-screen w-full p-6 md:p-8 
         max-w-screen-2xl mx-auto 
         flex flex-col items-start justify-center 
         relative z-10 box-border`}

@@ -6,13 +6,15 @@ import { TECHNOLOGIES } from "../constants";
 function TechGrid() {
   const { viewport } = useThree();
 
-  // número de colunas baseado na largura do viewport
+  const isMobile = viewport.width < 6;
+
   const cols =
     viewport.width > 14 ? 8 :
     viewport.width > 10 ? 6 :
     viewport.width > 6 ? 5 : 4;
 
-  const spacing = 4.8 ;
+  const spacing = isMobile ? 5 : 5.5;
+  const offsetY = isMobile ? 7 : 5;
 
   return (
     <>
@@ -20,17 +22,17 @@ function TechGrid() {
         const row = Math.floor(i / cols);
         const col = i % cols;
 
-        // centralização real
         const offsetX = ((cols - 1) * spacing) / 2;
 
         const x = col * spacing - offsetX;
-        const y = -row * spacing;
+        const y = -row * spacing + offsetY;
 
         return (
           <Ball
             key={tech.name}
             imgUrl={tech.icon}
             position={[x, y, 0]}
+            scale={isMobile ? 1.7 : 2.4}
           />
         );
       })}

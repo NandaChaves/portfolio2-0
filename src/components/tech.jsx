@@ -1,17 +1,10 @@
-import BallCanvas from "./canvas/ball";
-import { TECHNOLOGIES } from "../constants";
+import TechCanvas from "./TechCanvas";
+
 // Technologies
 export const Tech = () => {
   return (
-    <section>
-      <div className="flex flex-row flex-wrap justify-center gap-0 md:gap-10">
-        {/* Iterate over each technology */}
-        {TECHNOLOGIES.map((technology) => (
-          <div className="w-24 md:w-28 h-24 md:h-28" key={technology.name}>
-            <BallCanvas icon={technology.icon} />
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="w-screen relative left-1/2 right-1/2 -ml-[30vw] -mr-[30vw] h-[320px]">
+     <TechCanvas />
+    </div>
   );
 };

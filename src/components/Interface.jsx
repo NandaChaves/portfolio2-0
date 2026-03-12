@@ -14,7 +14,7 @@ const Section = (props) => {
   const { children, isContact = false } = props;
 
   return (
-    <motion.section className={`w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center ${isContact ? "min-h-fit pt-10" : "min-h-screen justify-start"} `}
+    <motion.section className={`h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
       initial={{
         opacity: 0,
         y: 50,

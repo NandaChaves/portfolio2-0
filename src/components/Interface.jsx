@@ -14,7 +14,7 @@ const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center box-border`}
+    <motion.section className={`h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-start md:justify-center box-border`}
       initial={{
         opacity: 0,
         y: 50,
@@ -171,11 +171,11 @@ const SkillsSection = () => {
          <Tech />
         </div>
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold mt-5 text-white">{t("idiomas")}</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mt-10 text-white">{t("idiomas")}</h2>
           <div className=" mt-2 space-y-4">
             {languages.map((lng, index) => (
-              <div className="w-64 py-2" key={index}>
-                <motion.h3 className="text-xl font-bold text-gray-100 flex flex-row gap-4"
+              <div className="w-64" key={index}>
+                <motion.h3 className="md:text-2xl md:text-xl font-bold text-gray-100 flex flex-row gap-4"
                   initial={{
                     opacity: 0,
                   }}
@@ -237,7 +237,7 @@ const ContactSection = () => {
     if (message.trim().length < 5) tempErrors.message = true;
 
     setErrors(tempErrors);
-    
+  
     return Object.keys(tempErrors).length === 0;
   };
 

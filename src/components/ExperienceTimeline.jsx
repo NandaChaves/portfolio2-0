@@ -32,7 +32,7 @@ const ExperienceCard = ({ experience }) => {
     {/* Experience Points */}
     <ul className="mt-4 list-disc ml-5 space-y-2">
       {currentPoints.map((point, i) => (
-        <li key={`experience-point-${i}`} className="text-white-100 text-[13.5px] tracking-wider">
+        <li key={`experience-point-${i}`} className="text-white-100 text-[10px] md:text-[13.5px] tracking-wider">
           {point}
         </li>
       ))}
@@ -44,11 +44,10 @@ const ExperienceCard = ({ experience }) => {
 export const ExperienceTimeline = () => {
   const { t } = useTranslation();
   return (
-    <Section idName="experencientimeline">
       <SectionWrapper idName="work">
       <>
         <div variants={textVariant()} className="flex flex-col mb-4">
-          <p className={styles.sectionSubText}>{t("subtitle_work")}</p>
+          <p className={styles.subtitle_work}>{t("subtitle_work")}</p>
           <h2 className={styles.sectionHeadText}>{t("title_work")}</h2>
         </div>
 
@@ -61,6 +60,5 @@ export const ExperienceTimeline = () => {
         </div>
       </>
     </SectionWrapper>
-    </Section>
   );
 };

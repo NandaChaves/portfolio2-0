@@ -6,7 +6,6 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useTranslation, Trans } from "react-i18next";
-import { Section } from "./Section";
 // Service Card
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -35,19 +34,21 @@ const ServiceCard = ({ index, title, icon }) => {
 export const About = () => {
    const { t } = useTranslation();
   return (
-      <Section>
-     <SectionWrapper idName="about">
+    <SectionWrapper idName="about">
       <>
+        {/* Title */}
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>{t("intro")}</p>
           <h2 className={styles.sectionHeadText}>{t("about_me")}</h2>
         </motion.div>
 
+        {/* Body */}
         <motion.p variants={fadeIn(undefined, undefined, 0.1, 1)}
           className="empty-4 text-secondary text-[15px] lg:text-[17px] max-w-3xl leading-[23px] lg:leading-[30px]" >
          {t("about_me_text")}
         </motion.p>
 
+        {/* Service Card */}
         <div className="lg:mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.title} index={i} {...service} />
@@ -55,6 +56,5 @@ export const About = () => {
         </div>
       </>
     </SectionWrapper>
-      </Section>
   );
 };

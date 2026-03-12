@@ -10,6 +10,7 @@ import { Menu } from "./components/Menu";
 import { ScrollManager } from "./components/ScrollManager";
 import { framerMotionConfig } from "./config";
 import StarsCanvas from "./components/canvas/stars";
+import { Suspense } from "react";
 function App() {
   const [section, setSection] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
@@ -24,7 +25,8 @@ function App() {
           ...framerMotionConfig,
         }}
       >
-        <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>
+        <Canvas shadows camera={{ position: [0, 3, 10], fov: 42 }}>~
+          <Suspense fallback={null}>
           <color attach="background" args={["red"]}/>
           <ScrollControls pages={6} damping={0.2}>
             <ScrollManager section={section} onSectionChange={setSection} />
@@ -36,6 +38,7 @@ function App() {
                   <StarsCanvas />
             </Scroll>
           </ScrollControls>
+          </Suspense>
         </Canvas>
         <Menu onSectionChange={setSection}
           menuOpened={menuOpened}

@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body {
+html,body,#root {
 margin: 0;
   padding: 0;
   width: 100%;
   /* Importante: min-height no body garante que o fundo cubra tudo */
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #root {
-height: 100%; /* Use isso no lugar */
-width: 100%;       /* Use isso no lugar */
  --card-w: clamp(100px, 45vw, 240px);
  --card-h: calc(var(--card-w) * 1.3);
  --radius: clamp(260px, 40vw, 520px);

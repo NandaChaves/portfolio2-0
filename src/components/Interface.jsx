@@ -37,7 +37,7 @@ export const Interface = (props) => {
   const { t } = useTranslation();
   const { setSection } = props;
   return (
-    <div className="flex flex-col items-center w-screen">
+    <div className="flex flex-col items-center w-screen relative">
       <AboutSection setSection={setSection} />
       <SkillsSection className="teste"/>
       <About />
@@ -84,15 +84,15 @@ const AboutSection = (props) => {
 <motion.div className="info-company mt-6">
   <div className="info-adv-box flex flex-row font-bold space-x-4 space-x-reverses uppercase mb-6 text-stone-50">
     <div className="info-item">
-      <h4 className="text"> <b className='text-violet-900 text-3xl'>+</b> <span className="text-violet-900 md:text-4xl text-2xl text-shadow-lg"><CounterUp end={2} /></span> {t("anos_ex")} </h4>
+      <h4 className="text"> <b className='text-violet-900 text-3xl'>+</b> <span className="text-violet-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={2} /></span> {t("anos_ex")} </h4>
     </div>
 
     <div className="info-item">
-      <h4 className="text"> <span className="text-stone-50 md:text-4xl text-2xl"><CounterUp end={11} /></span> {t("proje")} </h4>
+      <h4 className="text"> <span className="text-stone-50 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={11} /></span> {t("proje")} </h4>
     </div>
 
     <div className="info-item">
-      <h4 className="text"> <span className="text-indigo-600 md:text-4xl text-2xl"><CounterUp end={53} /></span> {t("repo")} </h4>
+      <h4 className="text"> <span className="text-fuchsia-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={53} /></span> {t("repo")} </h4>
     </div>
   </div>
 </motion.div> 

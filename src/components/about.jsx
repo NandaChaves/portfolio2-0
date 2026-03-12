@@ -6,6 +6,7 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useTranslation, Trans } from "react-i18next";
+import { Section } from "./Section";
 // Service Card
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -34,7 +35,8 @@ const ServiceCard = ({ index, title, icon }) => {
 export const About = () => {
    const { t } = useTranslation();
   return (
-    <SectionWrapper idName="about">
+      <Section>
+     <SectionWrapper idName="about">
       <>
         {/* Title */}
         <motion.div variants={textVariant()}>
@@ -56,5 +58,6 @@ export const About = () => {
         </div>
       </>
     </SectionWrapper>
+      </Section>
   );
 };

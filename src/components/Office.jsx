@@ -6,24 +6,25 @@ import { useGLTF, useTexture, useVideoTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import React, { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 import * as THREE from "three";
+const dracoUrl = "https://www.gstatic.com/draco/versioned/decoders/1.5.5/";
 
 export function Office(props) {
   const { section } = props;
-  const { nodes, materials } = useGLTF("models/scene.gltf");
+  const { nodes, materials } = useGLTF("models/scene-v1.glb", dracoUrl);
   const texture = useTexture("textures/baked.jpg");
   const textureVSCode = useVideoTexture("textures/vscode.mp4");
 
   texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
 
-  const textureMaterial = new THREE.MeshStandardMaterial({
+  const textureMaterial = useMemo(()=> new THREE.MeshStandardMaterial({
     map: texture,
     transparent: true,
     opacity: 1,
-  });
+  }), [texture]);
 
   const textureGlassMaterial = new THREE.MeshStandardMaterial({
     map: texture,
@@ -342,4 +343,4 @@ export function Office(props) {
   );
 }
 
-useGLTF.preload("models/scene.gltf");
+useGLTF.preload("models/scene-v2.glb", dracoUrl);

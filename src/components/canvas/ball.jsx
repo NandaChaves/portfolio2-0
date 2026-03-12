@@ -8,8 +8,6 @@ import {
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 
-import CanvasLoader from "../loader";
-
 // Ball
 const Ball = ({ imgUrl }) => {
   // use texture from drei
@@ -39,7 +37,7 @@ const BallCanvas = ({ icon }) => {
   return (
     <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
       {/* Show canvas loader on fallback */}
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback="null">
        {/* <OrbitControls enableZoom={false} /> Por padrão, o OrbitControls:, Captura pointermove, Pode interferir no scroll e Pode “vazar” comportamento quando existem vários canvases*/}
         <Ball imgUrl={icon} />
       </Suspense>

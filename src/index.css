@@ -68,7 +68,7 @@ margin: 0;
 }
 
 .scene {
-  min-height: 80vh; /* Aumentado para garantir que o grid caiba verticalmente */
+  min-height: 85vh; /* Aumentado para garantir que o grid caiba verticalmente */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,6 +155,74 @@ width: calc(100% - 20px); /* Espaço para a moldura lateral */
     width: 50%; height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
     animation: sweep 4s infinite;
+}
+/***************Loading screen******************/
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #050816; /* Cor do seu fundo no App.jsx */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100; /* Garante que fique acima de tudo */
+  transition: opacity 0.8s ease-in-out;
+}
+
+.loading-screen--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-screen__board {
+  text-align: center;
+}
+
+.loading-screen__title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.progress__container {
+  width: 200px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin: 0 auto 10px;
+  overflow: hidden;
+}
+
+.progress__bar {
+  height: 100%;
+  background-color: #915eff; /* Roxo padrão do Three.js/Tailwind */
+  transition: width 0.3s ease;
+}
+
+.progress__number {
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+.loading-screen__button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #915eff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.loading-screen__button:hover {
+  transform: scale(1.1);
 }
 
 @keyframes ani {

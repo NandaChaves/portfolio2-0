@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTranslation, Trans } from "react-i18next";
 import { createPortal } from "react-dom";
+import { Section } from "./Section";
 export const projectsData = [
     {
     id: 0,
@@ -192,7 +193,6 @@ export default function MyProjects() {
   rotationRef.current?.pause(); // Opcional: pausa o giro para o usuário ler
 };
 
-  // Detecta mobile
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 769);
     checkScreen();
@@ -273,7 +273,8 @@ export default function MyProjects() {
 
   
   return (
-    <div className="min-h-fit w-full flex flex-col items-center">
+    <Section>
+      <div className="w-full flex flex-col items-center">
       {/* FILTROS */}
       <div className="text-xl md:text-3xl filters block md:flex gap-4 mt-10 text-center md:text-justify">
         <button onClick={() => setCategory("all")}>{t("all")}</button>
@@ -329,9 +330,9 @@ export default function MyProjects() {
         </>
       )}
     </div>
-  </div>,
-  document.body
-)}
+  </div>
+  )}
     </div>
+    </Section>
   );
 }

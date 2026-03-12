@@ -5,12 +5,13 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 import { useTranslation, Trans } from "react-i18next";
+import { Section } from "./Section";
 import "react-vertical-timeline-component/style.min.css";
 
 // Experience Card
 const ExperienceCard = ({ experience }) => {
   const { i18n } = useTranslation();
-  const currentPoints = experience.points[i18n.language] || experience.points['en'];
+  const currentPoints = experience.points[i18n.language] || experience.points['pt'];
   return (
     <VerticalTimelineElement
     contentStyle={{ background: "#1d1836", color: "#fff" }}
@@ -45,17 +46,18 @@ const ExperienceCard = ({ experience }) => {
 export const ExperienceTimeline = () => {
   const { t } = useTranslation();
   return (
-    <SectionWrapper idName="work">
+    <Section idName="experencientimeline">
+      <SectionWrapper idName="work">
       <>
         {/* Title */}
-        <motion.div variants={textVariant()}>
+        <div variants={textVariant()} className="flex flex-col mb-4">
           <p className={styles.sectionSubText}>{t("subtitle_work")}</p>
           <h2 className={styles.sectionHeadText}>{t("title_work")}</h2>
-        </motion.div>
+        </div>
 
         {/* Experience Card */}
-        <div className="empty-20 flex flex-col">
-          <VerticalTimeline>
+        <div className="w-full mt-4 overflow-visible">
+          <VerticalTimeline layout="1-column">
             {EXPERIENCES.map((experience, i) => (
               <ExperienceCard key={i} experience={experience} />
             ))}
@@ -63,5 +65,6 @@ export const ExperienceTimeline = () => {
         </div>
       </>
     </SectionWrapper>
+    </Section>
   );
 };

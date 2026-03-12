@@ -44,7 +44,7 @@ export const About = () => {
 
         {/* Body */}
         <motion.p variants={fadeIn(undefined, undefined, 0.1, 1)}
-          className="empty-4 text-secondary text-[15px] lg:text-[17px] max-w-3xl leading-[23px] lg:leading-[30px]" >
+          className="p-4 text-justify md:text-left tracking-[.02em] empty-4 text-secondary text-[15px] lg:text-[17px] max-w-3xl leading-[23px] lg:leading-[30px]" >
          {t("about_me_text")}
         </motion.p>
 

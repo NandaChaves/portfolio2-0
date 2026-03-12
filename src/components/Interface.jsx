@@ -14,7 +14,7 @@ const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-start md:justify-center box-border`}
+    <motion.section className={`min-h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
       initial={{
         opacity: 0,
         y: 50,
@@ -165,7 +165,7 @@ const SkillsSection = () => {
   const currentLang = (i18n.language || 'pt').split('-')[0];
   return (
     <Section>
-      <motion.div whileInView={"visible"}>
+      <motion.div whileInView={"visible"} className='relative'>
         <h2 className="text-4xl font-bold text-white md:5xl"> {t("menu_skills")}</h2>
         <div className=" mt-3">
          <Tech />

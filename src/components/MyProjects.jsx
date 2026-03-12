@@ -285,7 +285,7 @@ export default function MyProjects() {
         <span className="mobile_message text-sm">Click to see</span>
       </div>
 
-      <div className={`scene w-full ${isMobile ? "carousel-mobile" : ""}`}>
+      <div className={`mt-5 scene w-full ${isMobile ? "carousel-mobile" : ""}`}>
         <div ref={carouselRef}
           className={`carousel ${isMobile ? "carousel-mobile" : ""} ${category !== "all" ? "is-filtered" : ""}`} >
           {projectsData.map((project, index) => (

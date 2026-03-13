@@ -250,12 +250,12 @@ const handleSubmit = (e) => {
     }
 
     setLoading(true);
-
+    console.log(import.meta.env);
     emailjs.sendForm(
-      import.meta.env.VITE_APP_SERVICE_ID, 
-      import.meta.env.VITE_APP_TEMPLATE_ID, 
+      import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
       formRef.current, 
-       import.meta.env.VITE_APP_EMAILJS_KEY
+       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
         toast.success(t('contactos.success'));

@@ -94,7 +94,7 @@ const AboutSection = (props) => {
         </div>
 
         <div className="info-item">
-          <h4 className="text"> <span className="text-fuchsia-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={53} /></span> {t("repo")} </h4>
+          <h4 className="text"> <span className="text-fuchsia-800 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={53} /></span> {t("repo")} </h4>
         </div>
       </div>
     </motion.div> 

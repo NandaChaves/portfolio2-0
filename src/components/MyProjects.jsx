@@ -312,7 +312,7 @@ export default function MyProjects() {
     className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm"
     onClick={() => { setSelectedProject(null); rotationRef.current?.resume(); }}>
     <div 
-      className="bg-[#1a1a1a] p-8 rounded-2xl max-w-lg w-full m-4 text-white relative border border-white/10"
+      className="bg-[#1a1a1a] p-6 rounded-2xl max-w-lg w-full m-4 text-white relative border border-white/10"
       onClick={(e) => e.stopPropagation()}>
       <button className="absolute top-4 right-4 text-3xl"
         onClick={() => { setSelectedProject(null); if (category === "all" && !isMobile) { rotationRef.current?.resume();} }} >
@@ -321,14 +321,14 @@ export default function MyProjects() {
 
       <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
       <img src={selectedProject.image} className="w-full rounded-lg mb-4" alt={selectedProject.title} />
-      <p className="text-gray-300 leading-[20px]">
+      <p className="text-gray-300 text-[10px] md:text-base leading-[15px] md:leading-[20px]">
         {selectedProject.description[i18n.language] || selectedProject.description['pt']}
       </p>
       
       {selectedProject.url && (
         <>
         <a href={selectedProject.url} target="_blank" className="inline-block mt-4 bg-white text-black px-4 py-2 rounded-lg font-bold">Link</a>
-        <span className="inline-block mt-4 text-indigo-600 px-4 py-2 rounded-lg font-bold">Tech: #{selectedProject.tech}</span>
+        <span className="inline-block mt-2 text-indigo-600 px-4 py-2 rounded-lg font-bold">Tech: #{selectedProject.tech}</span>
         </>
       )}
     </div>

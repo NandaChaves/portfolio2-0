@@ -33,7 +33,7 @@ export const Menu = (props) => {
           <MenuButton label='Home' onClick={() => onSectionChange(0)} />
           <MenuButton label={t("menu_skills")} onClick={() => onSectionChange(1)} />
           <MenuButton label={t("about_me")} onClick={() => onSectionChange(2)} />
-          <MenuButton label='Works' onClick={() => onSectionChange(3)} />
+          <MenuButton label={t("experience")} onClick={() => onSectionChange(3)} />
           <MenuButton label={t("projetos")} onClick={() => onSectionChange(4)} />
           <MenuButton label={t("menu_contact")} onClick={() => onSectionChange(5)} />
           <LanguageSwitcherMenu />

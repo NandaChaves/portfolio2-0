@@ -14,7 +14,7 @@ const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-full p-4 md:ml-40 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
+    <motion.section className={`h-screen w-full p-4 mx-auto md:ml-40 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
       initial={{
         opacity: 0,
         y: 50,

@@ -66,13 +66,13 @@ export const projectsData = [
   },
     {
     id: 4,
-    title: "Advance Lighting & Electrical Distributors",
+    title: "Advance Lighting",
     category: "fullstack",
     url: "https://advancelighting.pt/",
     image: "./projects/advance.png",
     description:{ 
       pt: `Plataforma corporativa e catálogo digital informativoda empresa de soluções de iluminação LED e componentes elétricos da Advance. 
-      Fui a desenvolvedora responsável por todo o ciclo de vida desta plataforma, desde a concepção de UI/UX até o desenvolvimento Full-stack. O  sistema possui funções de 
+      Fui a desenvolvedora responsável por todo o ciclo de vida desta plataforma, desde a concepção de UI/UX até o desenvolvimento Full-stack. O sistema possui funções de 
       busca de busca, filtragem por marcas (Lumiarq, Maxled, R-Electric, etc.) , produtos vistos recentemente e recomendações.`,
       en: `Corporate platform and informative digital catalog for the LED lighting solutions and electrical components company Advance.
       I was the developer responsible for the entire lifecycle of this platform, from UI/UX conception to full-stack development. The system has functions such as:
@@ -318,7 +318,7 @@ export default function MyProjects() {
       <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
       <img src={selectedProject.image} className="w-full rounded-lg mb-4" alt={selectedProject.title} />
       <p className="text-gray-300 leading-[20px]">
-        {selectedProject.description[i18n.language] || selectedProject.description['en']}
+        {selectedProject.description[i18n.language] || selectedProject.description['pt']}
       </p>
       
       {selectedProject.url && (

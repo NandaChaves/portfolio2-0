@@ -65,7 +65,7 @@ const AboutSection = (props) => {
         <br /> <span className="bg-white px-1 italic">Fernanda Fortes</span>
       </h1>
       <motion.p
-        className="md:text-lg text-sm text-white mt-4 main-text"
+        className="text-[16px] md:text-lg text-white mt-4 main-text [text-shadow:_0_2px_4px_rgb(99_102_241_/_0.8)]"
         initial={{
           opacity: 0,
           y: 25,
@@ -78,26 +78,27 @@ const AboutSection = (props) => {
           duration: 1,
           delay: 1.5,
         }}
-      ><Trans i18nKey="developer_bio_with_br" />
+      ><Trans i18nKey="developer_bio_with_br" components={[<br className="hidden md:inline" key="desktop-br" />
+  ]}/>
       </motion.p>
      
-<motion.div className="info-company mt-6">
-  <div className="info-adv-box flex flex-row font-bold space-x-4 space-x-reverses uppercase mb-6 text-stone-50">
-    <div className="info-item">
-      <h4 className="text"> <b className='text-violet-900 text-3xl'>+</b> <span className="text-violet-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={2} /></span> {t("anos_ex")} </h4>
-    </div>
+    <motion.div className="info-company mt-6">
+      <div className="info-adv-box flex flex-row font-bold space-x-4 space-x-reverses uppercase mb-6 text-stone-50">
+        <div className="info-item">
+          <h4 className="text"> <b className='text-violet-900 text-3xl'>+</b> <span className="text-violet-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={2} /></span> {t("anos_ex")} </h4>
+        </div>
 
-    <div className="info-item">
-      <h4 className="text"> <span className="text-stone-50 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={11} /></span> {t("proje")} </h4>
-    </div>
+        <div className="info-item">
+          <h4 className="text"> <span className="text-stone-50 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={11} /></span> {t("proje")} </h4>
+        </div>
 
-    <div className="info-item">
-      <h4 className="text"> <span className="text-fuchsia-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={53} /></span> {t("repo")} </h4>
-    </div>
-  </div>
-</motion.div> 
+        <div className="info-item">
+          <h4 className="text"> <span className="text-fuchsia-900 md:text-4xl text-2xl text-shadow-lg/30"><CounterUp end={53} /></span> {t("repo")} </h4>
+        </div>
+      </div>
+    </motion.div> 
 
-  <motion.div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-4 md:space-y-0 mt-8 md:mt-16'>
+     <motion.div className='flex flex-col md:flex-row items-center justify-center md:space-x-4 space-y-4 md:space-y-0 mt-8 md:mt-16'>
         <motion.button
         onClick={() => setSection(5)} className={`bg-indigo-600 text-white py-3 px-6 md:py-4 md:px-8 rounded-lg font-bold text-sm md:text-lg w-full md:w-auto`}
         initial={{
@@ -170,8 +171,8 @@ const SkillsSection = () => {
         <div className=" mt-3">
          <Tech />
         </div>
-        <div>
-          <h2 className="text-3xl md:text-5xl font-bold mt-10 text-white">{t("idiomas")}</h2>
+        <div className="mt-0">
+          <h2 className="text-3xl md:text-5xl font-bold mt-2 text-white">{t("idiomas")}</h2>
           <div className=" mt-2 space-y-4">
             {languages.map((lng, index) => (
               <div className="w-64" key={index}>
@@ -249,9 +250,6 @@ const handleSubmit = (e) => {
       return;
     }
 
-    console.log("SERVICE:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
-    console.log("TEMPLATE:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-    console.log("PUBLIC:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     setLoading(true);
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, 
@@ -261,7 +259,6 @@ const handleSubmit = (e) => {
     )
     .then(() => {
         toast.success(t('success'));
-        console.log("EMAIL ENVIADO");
         setName('');
         setEmail('');
         setMessage('');

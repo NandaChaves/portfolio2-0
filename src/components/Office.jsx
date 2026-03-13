@@ -51,8 +51,7 @@ export function Office(props) {
         name="Screen"
         geometry={nodes.Screen.geometry}
         position={[0.45, 0.94, -1.72]}
-        rotation={[Math.PI, -1.1, Math.PI]}
-      >
+        rotation={[Math.PI, -1.1, Math.PI]} >
         <meshBasicMaterial map={textureVSCode} toneMapped={false} />
       </mesh>
       <group

@@ -2,7 +2,7 @@ import {Float, MeshDistortMaterial, MeshWobbleMaterial, useScroll} from "@react-
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import { framerMotionConfig } from "../config";
 import { Avatar } from "./Avatar";
 import { Background } from "./Background";
@@ -51,22 +51,30 @@ export const Experience = (props) => {
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
   });
 
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
   return (
     <>
       <Background />
       <motion.group
-        position={[1.9072935059634513, 0.14400000000000002, 2.681801948466054]}
+        position={isMobile ? [0.36, 0.144, 2.68] : [1.9072935059634513, 0.144, 2.681801948466054]}
         rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
         animate={"" + section}
         transition={{
           duration: 0.6,
         }}
         variants={{
-          0: {
-            scaleX: 0.9,
-            scaleY: 0.9,
-            scaleZ: 0.9,
-          },
+          0: { scale: 0.95 },
           1: {
             y: -viewport.height + 0.5,
             x: 0,
@@ -113,7 +121,7 @@ export const Experience = (props) => {
       </motion.group>
       <ambientLight intensity={1.9} />
       <motion.group
-        position={[1.5, 2, 3]}
+        position={isMobile ? [0, 2, 3] : [1.5, 2, 3]}
         scale={[0.9, 0.9, 0.9]}
         rotation-y={-Math.PI / 4}
         animate={{
@@ -121,8 +129,7 @@ export const Experience = (props) => {
         }}
       >
         <Office section={section} />
-        <group
-          ref={characterContainerAboutRef}
+        <group ref={characterContainerAboutRef}
           name="CharacterSpot"
           position={[0.07, 0.16, -0.57]}
           rotation={[-Math.PI, 0.42, -Math.PI]}
@@ -138,24 +145,26 @@ export const Experience = (props) => {
       >
         <directionalLight position={[-5, 3, 5]} intensity={0.4} />
 
-        <Float>
+        {!isMobile &&(
+          <>
+          <Float>
           <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
-              transparent
+              transparent={!isMobile}
               distort={0.4}
-              speed={4}
+              speed={!isMobile ? 4 : 0}
               color={"#DC143C"}
             />
           </mesh>
         </Float>
-        <Float>
+          <Float>
           <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
             <sphereGeometry />
             <MeshDistortMaterial
               opacity={0.8}
-              transparent
+              transparent={!isMobile}
               distort={1}
               speed={5}
               color="yellow"
@@ -167,13 +176,15 @@ export const Experience = (props) => {
             <boxGeometry />
             <MeshWobbleMaterial
               opacity={0.8}
-              transparent
+              transparent={!isMobile}
               factor={1}
               speed={5}
               color={"blue"}
             />
           </mesh>
         </Float>
+          </>
+        )}
       </motion.group>
 
     </>

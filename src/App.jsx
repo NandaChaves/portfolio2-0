@@ -14,7 +14,6 @@ import { Suspense } from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//<LoadingScreen started={started} onStarted={() => setStarted(true)} />
 function App() {
   const [started, setStarted] = useState(false);
   const [section, setSection] = useState(0);
@@ -55,13 +54,14 @@ function App() {
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={8000} hideProgressBar={false} newestOnTop
+    <LoadingScreen started={started} onStarted={() => setStarted(true)} />
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop
         closeOnClick pauseOnHover theme="colored" style={{ zIndex: 9999 }} />
       <MotionConfig transition={{ ...framerMotionConfig,}} >
         <Canvas shadows={!isMobile} camera={{ position: [0, 3, 10], fov: 42 }} dpr={[1, isMobile ? 1.2 : 2]} gl={{ antialias: !isMobile, powerPreference: "high-performance" }}>
           <Suspense fallback={null}>
           <color attach="background" args={["#050816"]}/>
-          <ScrollControls pages={pages} damping={0.2}>
+          <ScrollControls pages={pages} damping={0.1}>
             <ScrollManager section={section} onSectionChange={setSection} />
             <Scroll>
               <Experience section={section} menuOpened={menuOpened} />

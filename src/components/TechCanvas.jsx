@@ -7,32 +7,30 @@ function TechGrid() {
   const { viewport } = useThree();
 
   const isMobile = viewport.width < 6;
-
-  const cols =
-    viewport.width > 14 ? 8 :
-    viewport.width > 10 ? 6 :
-    viewport.width > 6 ? 5 : 4;
-
+  const cols = viewport.width > 14 ? 8 : viewport.width > 10 ? 6 : viewport.width > 6 ? 5 : 4;
   const spacing = isMobile ? 5 : 5.5;
-  const offsetY = isMobile ? 7 : 5;
+
+  // CÁLCULO DINÂMICO:
+  const rows = Math.ceil(TECHNOLOGIES.length / cols);
+  const gridHeight = (rows - 1) * spacing;
+  const gridWidth = (cols - 1) * spacing;
 
   return (
     <>
-      {TECHNOLOGIES.map((tech, i) => {
+    {TECHNOLOGIES.map((tech, i) => {
         const row = Math.floor(i / cols);
         const col = i % cols;
 
-        const offsetX = ((cols - 1) * spacing) / 2;
-
-        const x = col * spacing - offsetX;
-        const y = -row * spacing + offsetY;
+        // Centraliza horizontalmente e verticalmente no viewport
+        const x = col * spacing - gridWidth / 2;
+        const y = -(row * spacing) + gridHeight / 2; 
 
         return (
           <Ball
             key={tech.name}
             imgUrl={tech.icon}
             position={[x, y, 0]}
-            scale={isMobile ? 1.7 : 2.4}
+            scale={isMobile ? 1 : 2.6}
           />
         );
       })}
@@ -41,11 +39,15 @@ function TechGrid() {
 }
 
 const TechCanvas = () => {
+  const isMobileView = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <Canvas
       style={{ width: "100%", height: "100%" }}
-      camera={{ position: [0, 0, 22], fov: 50 }}
-    >
+     camera={{ 
+        position: isMobileView ? [0, 0, 25] : [0, 0, 20], 
+        fov: isMobileView ? 50 : 42 
+      }}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[0, 0, 5]} />
 

@@ -1,7 +1,7 @@
 {
   "greeting": "Salut, je suis",
   "developer_bio": "Je suis une développeuse Full-Stack et modélisatrice 3D réalisant des vidéos YouTube pour aider les développeurs et les débutants",
-  "developer_bio_with_br": "Je suis une développeuse Full-Stack et modélisatrice 3D réalisant <br/> et je crée du contenu numérique pour aider les développeurs et les débutants",
+  "developer_bio_with_br": "Je suis une développeuse Full-Stack et modélisatrice 3D réalisant <0/> et je crée du contenu numérique pour aider les développeurs et les débutants",
   "contact_me_button": "Contactez-moi",
   "contact_me_title": "Contactez-moi",
   "form_name_label": "Nom",

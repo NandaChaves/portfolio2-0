@@ -1,7 +1,7 @@
 {
   "greeting": "Hi, I'm",
   "developer_bio": "I'm a Full-Stack developer and 3D modeler making YouTube videos to help developers and beginners",
-  "developer_bio_with_br": "I'm a Full-Stack developer and 3D modeler making <br/> digital content to help developers and beginners",
+  "developer_bio_with_br": "I'm a Full-Stack developer and 3D modeler making <0/> digital content to help developers and beginners",
   "contact_me_button": "Contact me",
   "contact_me_title": "Contact me",
   "form_name_label": "Name",

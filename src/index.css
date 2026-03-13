@@ -180,6 +180,7 @@ width: calc(100% - 20px); /* Espaço para a moldura lateral */
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #1a1a1a;
   z-index: 100; /* Garante que fique acima de tudo */
   transition: opacity 0.8s ease-in-out;
 }

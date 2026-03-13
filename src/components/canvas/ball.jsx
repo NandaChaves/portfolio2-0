@@ -12,14 +12,11 @@ const Ball = ({ imgUrl, position }) => {
           color="#fff8eb"
           polygonOffset
           polygonOffsetFactor={-5}
-          flatShading
-        />
-
-        <Decal
-          position={[0, 0, 1]}
+          flatShading />
+          <icosahedronGeometry args={[1, 1]} />
+        <Decal position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
-          map={decal}
-        />
+          map={decal} />
       </mesh>
     </Float>
   );

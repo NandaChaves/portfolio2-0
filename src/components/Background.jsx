@@ -1,7 +1,7 @@
 import { Sphere, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { useTexture } from "@react-three/drei";
 import herobgPath from '/src/assets/space.png';
@@ -46,24 +46,40 @@ export const Background = () => {
       .to(color.current, { color: "#2b2c3e" }, 0)
 
       .to(imageOpacity.current, { opacity: 0 }, 1)
-      .to(color.current, { color: "#212121" }, 1)
+      .to(color.current, { color: "#3c3b3b" }, 1)
 
       .to(color.current, { color: "#7a7ca5" })
       .to(color.current, { color: "#8c89af" })
-      .to(color.current, { color: "#080a18" })
+      .to(color.current, { color: "#14172f" })
       .to(color.current, { color: "#656674" }); 
 
   }, []);
+
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    // Detecta se a tela é menor que 768px (padrão mobile/tablet)
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    return () => mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
+  
   return (
     <group ref={sphereRef}>
-      <Sphere scale={[100, 100, 100]}>
+      <Sphere scale={isMobile ? [60,60,50] : [100,100,100]}>
         <meshBasicMaterial 
           ref={material} 
           side={THREE.BackSide} 
           toneMapped={false}
           map={texture} 
-          map-color={0xFFFFFF} 
-          transparent={true}
+          color={isMobile ? "#050816" : undefined} 
+          transparent={!isMobile} 
         />
       </Sphere>
     </group>

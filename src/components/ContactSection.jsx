@@ -8,7 +8,7 @@ const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-full p-4 mx-auto md:ml-40 max-w-screen-2xl flex flex-col items-start justify-center md:justify-start`}
+    <motion.section className={`h-screen w-full p-4 md:p-0 mx-auto md:ml-40 max-w-screen-2xl flex flex-col items-start justify-center md:justify-start`}
       initial={{
         opacity: 0,
         y: 50,

@@ -20,15 +20,19 @@ export const projectsData = [
   },
   {
     id: 1,
-    title: "Wheather App with API",
+    title: "Wheather App",
     category: "frontend",
     url: "https://nandachaves.github.io/weather-app/",
     image: "./projects/weather-app.png",
     description:{
-      pt: `Aplicativo meteorológico em React JS. Aqui, obtemos os dados meteorológicos atuais usando a API do OpenWeatherMap e exibimos informações como temperatura em Celsius, condições meteorológicas, umidade e velocidade do vento de acordo com a cidade neste aplicativo meteorológico.`,
-      en: `Weather app in React JS. Here we get the current Weather data using API from OpenWeatherMap and display informations like Temperature in Celsius, Weather condition, Humidity and Wind Speed according to the city in this Weather app.`,
-      es: `Aplicación meteorológica en React JS. Aquí obtenemos los datos meteorológicos actuales utilizando la API de OpenWeatherMap y mostramos información como la temperatura en grados Celsius, las condiciones meteorológicas, la humedad y la velocidad del viento según la ciudad en esta aplicación meteorológica.`,
-      fr: `Application météo en React JS. Ici, nous obtenons les données météorologiques actuelles à l'aide de l'API d'OpenWeatherMap et affichons des informations telles que la température en degrés Celsius, les conditions météorologiques, l'humidité et la vitesse du vent en fonction de la ville dans cette application météo.`,
+      pt: `Aplicativo meteorológico em React JS. Obtemos os dados meteorológicos atuais usando a API do OpenWeatherMap e exibimos
+       informações como temperatura em Celsius, condições meteorológicas, umidade e velocidade do vento uma cidade neste aplicativo.`,
+      en: `Weather app in React JS. We get the current Weather data using API from OpenWeatherMap and display informations like Temperature in Celsius, 
+      Weather condition, Humidity and Wind Speed of to the city in this App.`,
+      es: `Aplicación meteorológica en React JS. Obtenemos los datos meteorológicos actuales utilizando la API de OpenWeatherMap y mostramos información 
+      como la temperatura en grados Celsius, las condiciones meteorológicas, la humedad y la velocidad de la ciudad en esta aplicación.`,
+      fr: `Application météo en React JS. Nous obtenons les données météorologiques actuelles à l'aide de l'API d'OpenWeatherMap et affichons des informations
+       telles que la température en degrés Celsius, les conditions météorologiques, l'humidité et la vitesse du vent pour une ville.`,
     },
     tech:"React, CSS e OpenWeather"
   },

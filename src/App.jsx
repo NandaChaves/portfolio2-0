@@ -55,7 +55,7 @@ function App() {
   return (
     <>
       <MotionConfig transition={{ ...framerMotionConfig,}} >
-        <Canvas shadows={!isMobile} camera={{ position: [0, 3, 10], fov: 42 }} dpr={[1, isMobile ? 1.2 : 2]} gl={{ antialias: !isMobile, powerPreference: "high-performance" }} eventSource={document.getElementById('root')}>
+        <Canvas shadows={!isMobile} camera={{ position: [0, 3, 10], fov: 42 }} dpr={[1, isMobile ? 1.2 : 2]} gl={{ antialias: !isMobile, powerPreference: "high-performance" }}>
           <Suspense fallback={null}>
           <color attach="background" args={["#050816"]}/>
           <ScrollControls pages={pages} damping={0.2}>

@@ -71,16 +71,16 @@ export const projectsData = [
     url: "https://advancelighting.pt/",
     image: "./projects/advance.png",
     description:{ 
-      pt: `Este projeto consiste em uma plataforma corporativa e catálogo digital informativoda empresa de soluções de iluminação LED e componentes elétricos da Advance. 
+      pt: `Plataforma corporativa e catálogo digital informativoda empresa de soluções de iluminação LED e componentes elétricos da Advance. 
       Fui a desenvolvedora responsável por todo o ciclo de vida desta plataforma, desde a concepção de UI/UX até o desenvolvimento Full-stack. O  sistema possui funções de 
       busca de busca, filtragem por marcas (Lumiarq, Maxled, R-Electric, etc.) , produtos vistos recentemente e recomendações.`,
-      en: `This project consists of a corporate platform and informative digital catalog for the LED lighting solutions and electrical components company Advance.
+      en: `Corporate platform and informative digital catalog for the LED lighting solutions and electrical components company Advance.
       I was the developer responsible for the entire lifecycle of this platform, from UI/UX conception to full-stack development. The system has functions such as:
       search, filtering by brands (Lumiarq, Maxled, R-Electric, etc.), recently viewed products, and recommendations.`,
-      es: `Este proyecto consiste en una plataforma corporativa y un catálogo digital informativo para Advance, empresa de soluciones de iluminación LED y componentes eléctricos.
+      es: `Plataforma corporativa y un catálogo digital informativo para Advance, empresa de soluciones de iluminación LED y componentes eléctricos.
       Fui el desarrollador responsable de todo el ciclo de vida de esta plataforma, desde la concepción de la interfaz de usuario y la experiencia de usuario (UI/UX) hasta el desarrollo completo.
       El sistema incluye funciones como búsqueda, filtrado por marcas (Lumiarq, Maxled, R-Electric, etc.), productos vistos recientemente y recomendaciones.`,
-      fr: `Ce projet comprend une plateforme d'entreprise et un catalogue numérique informatif pour Advance, société spécialisée dans les solutions d'éclairage LED et les composants électriques.
+      fr: `Plateforme d'entreprise et un catalogue numérique informatif pour Advance, société spécialisée dans les solutions d'éclairage LED et les composants électriques.
       J'étais le développeur responsable de l'intégralité du cycle de vie de cette plateforme, de la conception de l'interface utilisateur (UI/UX) au développement complet. Le système propose les fonctionnalités suivantes :
       recherche, filtrage par marque (Lumiarq, Maxled, R-Electric, etc.), produits récemment consultés et recommandations.`,
 

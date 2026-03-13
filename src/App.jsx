@@ -55,10 +55,10 @@ function App() {
   return (
     <>
     <LoadingScreen started={started} onStarted={() => setStarted(true)} />
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop
+      <ToastContainer position="top-right" autoClose={4000} hideProgressBar={false} newestOnTop
         closeOnClick pauseOnHover theme="colored" style={{ zIndex: 9999 }} />
       <MotionConfig transition={{ ...framerMotionConfig,}} >
-        <Canvas shadows={!isMobile} camera={{ position: [0, 3, 10], fov: 42 }} dpr={[1, isMobile ? 1.2 : 2]} gl={{ antialias: !isMobile, powerPreference: "high-performance" }}>
+        <Canvas shadows={!isMobile} camera={{ position: [0, 3, 10], fov: 42 }} dpr={[1, isMobile ? 1.4 : 2]} gl={{ antialias: !isMobile, powerPreference: "high-performance" }}>
           <Suspense fallback={null}>
           <color attach="background" args={["#050816"]}/>
           <ScrollControls pages={pages} damping={0.1}>

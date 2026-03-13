@@ -250,7 +250,9 @@ const handleSubmit = (e) => {
     }
 
     setLoading(true);
-    console.log(import.meta.env);
+    console.log("SERVICE:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+    console.log("TEMPLATE:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+    console.log("PUBLIC:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, 
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 

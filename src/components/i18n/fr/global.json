@@ -34,5 +34,6 @@
   "about_me":"À propos de moi",
   "about_me_text": "Je suis une développeuse web qualifiée avec une solide expérience en PHP, MySQL et JavaScript. Spécialiste de l'écosystème moderne, j'utilise des bibliothèques telles que React et Three.js, l'environnement d'exécution Node.js et le framework Angular. Actuellement, j'approfondis mes connaissances en Next.js pour les applications hautes performances et en Docker pour la conteneurisation et l'évolutivité. Je travaille en étroite collaboration avec les clients pour créer des solutions efficaces et intuitives. Donnez vie à vos idées !",
   "subtitle_work":"Ce que j'ai fait jusqu'à maintenant",
-  "title_work":"Expérience professionnelle"
+  "title_work":"Expérience professionnelle",
+  "success":"Message envoyé avec succès! 🚀"
 }

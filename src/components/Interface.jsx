@@ -14,7 +14,7 @@ const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`min-h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
+    <motion.section className={`min-h-screen w-full p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
       initial={{
         opacity: 0,
         y: 50,
@@ -250,9 +250,6 @@ const handleSubmit = (e) => {
     }
 
     setLoading(true);
-    console.log("SERVICE:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
-    console.log("TEMPLATE:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-    console.log("PUBLIC:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID, 
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
@@ -260,8 +257,8 @@ const handleSubmit = (e) => {
        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
-        toast.success(t('contactos.success'));
-        // Limpar formulário
+        toast.success(t('success'));
+        console.log("EMAIL ENVIADO");
         setName('');
         setEmail('');
         setMessage('');
@@ -296,11 +293,10 @@ const handleSubmit = (e) => {
           {errors.message && <span className="text-red-500 text-sm mt-1 italic">{t("error_message")}</span>}
           <textarea name="from_message" id="message" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Write your message"
             className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"/>
-          <button disabled={loading} className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-12 submit"  type="submit">
+          <button  type="submit" disabled={loading} className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-12 submit">
             {loading ? t("send") : t("form_submit_button")}
           </button>
         </form>
-         <ToastContainer />
       </div>
     </Section>
   );

@@ -9,6 +9,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { ExperienceTimeline } from './ExperienceTimeline';
 import MyProjects from './MyProjects';
 import { About } from './about';
+import ContactSection from './ContactSection';
 import 'react-toastify/dist/ReactToastify.css';
 const Section = (props) => {
   const { children } = props;
@@ -219,7 +220,7 @@ const SkillsSection = () => {
     </Section>
   );
 };
-
+/*
 const ContactSection = () => {
   const { t } = useTranslation();
   const formRef = useRef();
@@ -302,4 +303,5 @@ const handleSubmit = (e) => {
   );
 };
 
+*/
 export default Interface;

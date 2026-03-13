@@ -81,7 +81,7 @@ const handleSubmit = (e) => {
   return (
     <Section isContact={true}>
       <h2 className="text-3xl md:text-5xl font-bold text-gray-200">{t("contact_me_title")}</h2>
-      <div className="mt-3 p-8 rounded-md bg-white w-96 max-w-full">
+      <div className="mt-2 p-4 rounded-md bg-white w-96 max-w-full">
         <form ref={formRef} onSubmit={handleSubmit} method='POST'>
           <label htmlFor="name" className="font-medium text-gray-900 block mb-1"> {t("form_name_label")}  </label>
           <input type="text" id="name" value={name} name="from_name" onChange={(e) => setName(e.target.value)} placeholder="What's your name"

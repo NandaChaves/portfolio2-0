@@ -7,7 +7,7 @@ export const Section = (props) => {
 
   return (
     <motion.section 
-      className={`h-screen w-full p-8 max-w-screen-2xl md:ml-10 flex flex-col items-start justify-center md:justify-center box-border`}
+      className={`h-screen w-full p-8 max-w-screen-2xl md:ml-10 flex flex-col items-start justify-center box-border`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{
         opacity: 1,

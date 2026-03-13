@@ -3,7 +3,29 @@ import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import React, { useEffect, useState, useRef,lazy, Suspense } from 'react';
 import { useTranslation, Trans } from "react-i18next";
-import { Section} from './Section';
+import { motion } from "framer-motion";
+const Section = (props) => {
+  const { children } = props;
+
+  return (
+    <motion.section className={`h-screen w-full md:ml-10 p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center md:justify-start`}
+      initial={{
+        opacity: 0,
+        y: 50,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1,
+          delay: 0.6,
+        },
+      }}
+    >
+      {children}
+    </motion.section>
+  );
+};
 
 export default function ContactSection () {
 

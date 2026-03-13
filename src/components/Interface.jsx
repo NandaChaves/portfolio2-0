@@ -10,11 +10,12 @@ import { ExperienceTimeline } from './ExperienceTimeline';
 import MyProjects from './MyProjects';
 import { About } from './about';
 import 'react-toastify/dist/ReactToastify.css';
+import ContactSection from './ContactSection';
 const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-full p-4 mx-auto md:ml-40 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
+    <motion.section className={`h-screen w-full p-4 mx-auto md:ml-40 max-w-screen-2xl flex flex-col items-start justify-center`}
       initial={{
         opacity: 0,
         y: 50,
@@ -219,7 +220,7 @@ const SkillsSection = () => {
     </Section>
   );
 };
-
+/*
 const ContactSection = () => {
   const { t } = useTranslation();
   const formRef = useRef();
@@ -301,5 +302,7 @@ const handleSubmit = (e) => {
     </Section>
   );
 };
+
+*/
 
 export default Interface;

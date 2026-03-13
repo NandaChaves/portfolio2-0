@@ -3,13 +3,12 @@ import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import React, { useEffect, useState, useRef,lazy, Suspense } from 'react';
 import { useTranslation, Trans } from "react-i18next";
-
-
+import { motion } from "framer-motion";
 const Section = (props) => {
   const { children } = props;
 
   return (
-    <motion.section className={`h-screen w-full p-8 max-w-screen-2xl  flex flex-col items-start justify-center`}
+    <motion.section className={`h-screen w-full p-4 mx-auto md:ml-40 max-w-screen-2xl flex flex-col items-start justify-center md:justify-start`}
       initial={{
         opacity: 0,
         y: 50,
